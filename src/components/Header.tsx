@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import Text from "./Text"
 
 const Header = () => {
   return (
@@ -14,41 +15,44 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 5vh;
-  background-color: salmon;
   padding-top: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   overflow: hidden;
 `
 
 
 export const HeaderLeft = () => {
   return (
-    <HeaderButtonWrapper flex={1}>
-    <div>HeaderLeft</div>
+    <HeaderButtonWrapper flex={1} justifyContent={`start`}>
+      <Text>HeaderLeft</Text>
     </HeaderButtonWrapper>
   )
 }
 
 interface HeaderButtonProps {
-  flex: number;
+  flex?: number;
   marginLeft?: number;
+  justifyContent?: string;
 }
 
 export const HeaderButtonWrapper = styled.div<HeaderButtonProps>`
   display: flex;
-  justify-content: space-around;
+  justify-content: ${p => p.justifyContent ?? `space-around`};
   margin-left: ${p => p.marginLeft}em;
   flex: ${p => p.flex};
 `
 
+export const HeaderItemWrapper = styled.div`
+  padding: 0rem 3rem 0rem 3rem;
+`
+
 export const HeaderRight = () => {
   return (
-    <HeaderButtonWrapper flex={5} marginLeft={10}>
-    <div>One</div>
-    <div>Two</div>
-    <div>Three</div>
-    <div>Four</div>
+    <HeaderButtonWrapper justifyContent={`end`}>
+    <HeaderItemWrapper>One</HeaderItemWrapper>
+    <HeaderItemWrapper>Two</HeaderItemWrapper>
+    <HeaderItemWrapper>Three</HeaderItemWrapper>
+    <HeaderItemWrapper>Four</HeaderItemWrapper>
+    <HeaderItemWrapper>Five</HeaderItemWrapper>
     </HeaderButtonWrapper>
   )
 }
