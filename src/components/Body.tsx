@@ -16,11 +16,11 @@ export const BodyPartWrapper = styled.div`
 `
 
 export const LeftWrapper = styled.div`
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 60%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60%;
 `
 
 export const BodyLeft = () => {
@@ -38,9 +38,9 @@ export const BodyLeft = () => {
 
 const Body = () => {
   return (
-      <BodyWrapper>
-          <BodyLeft/>
-       </BodyWrapper>
+    <BodyWrapper>
+      <BodyLeft/>
+    </BodyWrapper>
   )
 }
 export default Body
